@@ -12,6 +12,10 @@
     />
   </head>
   <body>
+    <div class="announcement-banner" role="status" aria-live="polite">
+      📢 Activity registration is open until the end of the month. Don't lose your spot!
+    </div>
+
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -33,11 +37,14 @@
       </div>
     </header>
 
-    <!-- Announcement Banner -->
-    <div id="announcement-banner" class="announcement-banner hidden" role="region" aria-label="Announcements">
-      <div id="announcement-slides"></div>
-      <button id="announcement-close" class="announcement-close" aria-label="Dismiss announcements">&times;</button>
-    </div>
+    <section id="announcement-banner" class="announcement-banner" role="status" aria-live="polite">
+      <div class="announcement-content">
+        <strong>Announcement:</strong> Spring activities registration closes Friday at 5:00 PM.
+      </div>
+      <button id="dismiss-announcement" class="announcement-dismiss" aria-label="Dismiss announcement">
+        Dismiss
+      </button>
+    </section>
 
     <main>
       <section id="activities-container">

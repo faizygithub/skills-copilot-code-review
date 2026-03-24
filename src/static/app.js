@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
   const closeLoginModal = document.querySelector(".close-login-modal");
   const loginMessage = document.getElementById("login-message");
+  const announcementBanner = document.getElementById("announcement-banner");
+  const dismissAnnouncementButton = document.getElementById(
+    "dismiss-announcement"
+  );
 
   // Activity categories with corresponding colors
   const activityTypes = {
@@ -1160,6 +1164,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Initialize app
+  const announcementDismissed =
+    localStorage.getItem("announcementDismissed") === "true";
+  if (announcementDismissed && announcementBanner) {
+    announcementBanner.style.display = "none";
+  }
+
+  if (dismissAnnouncementButton && announcementBanner) {
+    dismissAnnouncementButton.addEventListener("click", () => {
+      announcementBanner.style.display = "none";
+      localStorage.setItem("announcementDismissed", "true");
+    });
+  }
+
   checkAuthentication();
   initializeFilters();
   fetchActivities();
